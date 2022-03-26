@@ -1,0 +1,9 @@
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-product img{
+    width: 80px;
+    margin-right: 20px;
+}
