@@ -2,22 +2,41 @@ import React, { useEffect, useState } from 'react';
 import Fruits from '../Fruits/Fruits';
 import Cart from '../Cart/Cart';
 import './Products.css';
+import Choose from '../Choose/Choose';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
-
+    const [items, setItem] = useState([]);
+    console.log(items);
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);
     const handleAddToCart = (product) => {
-        const newCart = [...cart, product];
-        setCart(newCart);
+        if (cart.length > 3) {
+            alert('text');
+        }
+        else {
+            const newCart = [...cart, product];
+            setCart(newCart);
+        }
+    }
+    const chooseItem = () => {
+        let items = 0;
+        if (!items !== undefined) {
+            setItem(items)
+            const carts = Math.floor(Math.random() * 3 + 1);
+            items = cart[carts];
+            console.log(items);
+            setItem(items);
+
+        }
     }
     const reset = () => {
         setCart([]);
+        setItem([]);
     }
     return (
         <div className='store-container'>
@@ -30,7 +49,7 @@ const Products = () => {
                     ></Fruits>)
                 }
             </div>
-            <div className='select-product'>
+            <div>
                 <h3>Select product</h3>
                 {
                     cart.map(cart => <Cart
@@ -38,7 +57,12 @@ const Products = () => {
                         cart={cart}
                     ></Cart>)
                 }
-                <button >
+                {
+                    <Choose
+                        item={items}
+                    ></Choose>
+                }
+                <button onClick={chooseItem}>
                     <p>Choose item</p>
                 </button>
                 <button onClick={reset} className='btn-reset'>
