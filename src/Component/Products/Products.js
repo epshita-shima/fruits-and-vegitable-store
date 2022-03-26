@@ -30,9 +30,8 @@ const Products = () => {
                     ></Fruits>)
                 }
             </div>
-            <div>
-                <h3>Select summary</h3>
-                <p>Selected items:{cart.length}</p>
+            <div className='select-product'>
+                <h3>Select product</h3>
                 {
                     cart.map(cart => <Cart
                         key={cart.id}

@@ -11,3 +11,12 @@
 .product-container img{
     width: 280px;
 }
+@media screen and (max-width:768px){
+    .product-container{
+        grid-template-columns:1fr 1fr;
+    }
+   .product-container{
+    grid-template-columns: repeat(1,1fr);
+   }
+    
+}
