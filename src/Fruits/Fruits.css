@@ -1,3 +1,22 @@
 .fruits{
+    width: 300px;
+    height: 400px;
     border: 1px solid salmon;
+    position: relative;
+}
+.fruits-header{
+text-align: center;
+}
+.btn-cart{
+    width: 100%;
+    background: #FFE0B3;
+    border: none;
+    bottom: 0px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-cart:hover{
+    background-color: orange;
 }
