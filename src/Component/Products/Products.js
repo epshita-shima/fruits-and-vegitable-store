@@ -62,9 +62,10 @@ const Products = () => {
                         item={items}
                     ></Choose>
                 }
-                <button onClick={chooseItem}>
+                <button onClick={chooseItem} className='btn-choose'>
                     <p>Choose item</p>
                 </button>
+                <br />
                 <button onClick={reset} className='btn-reset'>
                     <p>Choose Again</p>
                 </button>

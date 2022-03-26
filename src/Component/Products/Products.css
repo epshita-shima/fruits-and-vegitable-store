@@ -11,6 +11,17 @@
 .product-container img{
     width: 280px;
 }
+.btn-choose, .btn-reset{
+    background-color: transparent;
+    border: 1px solid green;
+    width: 150px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.btn-reset{
+    margin-top: 10px;
+    border: 1px solid red;
+}
 @media screen and (max-width:768px){
     .product-container{
         grid-template-columns:1fr 1fr;
